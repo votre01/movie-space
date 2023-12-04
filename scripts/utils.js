@@ -16,4 +16,3 @@ export function truncateString(str, maxLength) {
   return str;
 }
 
-// Add more utility functions as needed

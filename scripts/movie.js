@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('home-link').addEventListener('click', () => {
       // Handle navigation to the home page
     });
-    // Add more event listeners for other navigation links if needed
+    // Add more event listeners for other navigation links
   } catch (error) {
     console.error('Error loading movie details:', error);
   }
@@ -27,7 +27,7 @@ function getMovieIdFromUrl() {
 
   if (!movieId) {
     console.error('Movie ID not found in the URL');
-    // You may want to redirect to an error page or the home page
+
   }
 
   return movieId;
@@ -56,5 +56,4 @@ function renderMovieDetails(movie) {
   voteAverage.textContent = `Vote Average: ${movie.vote_average}`;
   movieDetailsContainer.appendChild(voteAverage);
 
-  // Add more details as needed (genres, runtime, etc.)
 }
