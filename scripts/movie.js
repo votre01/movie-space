@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Render movie details
     renderMovieDetails(movieDetails);
 
-    // Add event listeners for navigation, etc.
+    // Add event listeners for navigation
     document.getElementById('home-link').addEventListener('click', () => {
       // Handle navigation to the home page
     });
