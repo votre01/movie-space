@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Movies - Movie Review App</title>
+  <!-- Add your CSS links or stylesheets here -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Movie Review App</h1>
+    <!-- Add any additional header content as needed -->
+  </header>
+
+  <!-- Navigation Menu -->
+  <nav>
+    <ul>
+      <!-- Add your navigation links as needed -->
+    </ul>
+  </nav>
+
+  <!-- Content Container -->
+  <div id="content-container">
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search for movies...">
+      <button onclick="searchMovies()">Search</button>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="filter-section">
+      <label for="genre-filter">Filter by Genre:</label>
+      <select id="genre-filter">
+        <!-- Populate options dynamically based on available genres -->
+        <option value="action">Action</option>
+        <option value="drama">Drama</option>
+        <!-- Add more genres as needed -->
+      </select>
+
+      <!-- Add more filters (language, country, rating) as needed -->
+
+      <button onclick="applyFilters()">Apply Filters</button>
+    </div>
+
+    <!-- Search Results -->
+    <div id="search-results">
+      <!-- Results will be dynamically rendered here -->
+    </div>
+  </div>
+
+  <!-- Add your JavaScript script tags here -->
+  <script type="module" src="scripts/index.js"></script>
+  <script type="module" src="scripts/router.js"></script>
+  <script type="module" src="scripts/search.js"></script>
+  <!-- Add other necessary script tags -->
+
+</body>
+
+</html>
