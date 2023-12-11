@@ -1,7 +1,8 @@
 // api.js
 
-const apiKey = 'a7755f43714efef1105e70a67ece7032';
-const apiUrl = 'https://api.themoviedb.org/3';
+export const apiKey = "a7755f43714efef1105e70a67ece7032";
+const apiUrl = "https://api.themoviedb.org/3";
+export const imgUrl = "https://image.tmdb.org/t/p/w500/"
 
 async function fetchData(endpoint, params = {}) {
   const url = new URL(`${apiUrl}${endpoint}`);
@@ -41,7 +42,7 @@ export async function getMovieDetails(movieId) {
 
 export async function getMoviesByGenre(genreId) {
   const endpoint = '/discover/movie';
-  const params = { with_genres: genreId, language: 'en-US', page: 1 };
+  const params = { with_genres: genreId, language: 'en-US'};
   return fetchData(endpoint, params);
 }
 

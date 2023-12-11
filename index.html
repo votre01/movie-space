@@ -6,20 +6,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Movie Review App</title>
+  <link rel="stylesheet" href="sass/styles.css">
 </head>
 <body>
   <header>
-    <h1>Movie Review App</h1>
-    <!-- Add navigation links -->
+    <h1>Movie Space</h1>
+    <!-- Navigation links -->
     <nav>
       <a href="#" id="home-link">Home</a>
-      <a href="#" id="genre-link">Genres</a>
+      <a href="pages/genre.html" id="genre-link">Genres</a>
       <a href="#" id="search-link">Search</a>
     </nav>
   </header>
 
-  <main id="main-content">
-    <!-- Content will be dynamically loaded here -->
+  <main id="main-content" class="main">
+    <h2>What movie are you looking for today?</h2>
+    <div class="search">
+      <input id="search-input" type="search" class="search__input" placeholder="Search movies...">
+      <button id="home-search-btn" class="search__btn">Search</button>
+    </div>
+    
+    <!-- Load Content dynamically here -->
+
+    <div id="home-search-results" class="movie-list"></div>
+
+    <div id=popular-movies class="movie-list"></div>
+
   </main>
 
   <script type="module" src="scripts/index.js"></script>

@@ -15,4 +15,3 @@ export function truncateString(str, maxLength) {
   }
   return str;
 }
-

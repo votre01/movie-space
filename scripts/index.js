@@ -1,15 +1,29 @@
 // index.js
 
-import { getPopularMovies } from './api.js';
-import { renderHome } from './home.js';
+import { getPopularMovies, searchMovies } from './api.js';
+import { renderPopularMovies } from './home.js';
+import { renderHomeSearch } from './search.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     // Fetch popular movies
     const popularMovies = await getPopularMovies();
 
+    async function searched() {
+        // Get search query
+      let searchQuery = document.getElementById("search-input").value;    
+
+      // Fetch searched movie(s)
+      const homeSearch = await searchMovies(searchQuery);
+
+      renderHomeSearch(homeSearch);
+    }
+
     // Render home page with popular movies
-    renderHome(popularMovies);
+    renderPopularMovies(popularMovies);
+
+    // Render me page with searched movie(s)
+    document.getElementById("home-search-btn").addEventListener("click", searched);
 
     // Add event listeners for navigation, etc.
     document.getElementById('home-link').addEventListener('click', () => {

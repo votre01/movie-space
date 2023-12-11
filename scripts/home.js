@@ -1,20 +1,22 @@
-import { formatDate } from './utils.js';
+import { formatDate } from "./utils.js";
+import { imgUrl } from "./api.js";
 
-export function renderHome(popularMovies) {
+export function renderPopularMovies(popularMovies) {
   // Render popular movies on the home page
-  const mainContent = document.getElementById('main-content');
-  mainContent.innerHTML = '<h2>Popular Movies</h2>';
+  const popular = document.getElementById("popular-movies");
+  popular.innerHTML = "<h3>Popular Movies</h3>";
 
-  const movieList = document.createElement('ul');
+  const popularMovieList = document.createElement('ul');
   popularMovies.results.forEach((movie) => {
     const listItem = document.createElement('li');
-    const moviePoster = document.createElement('img');
+    // const moviePoster = document.createElement('img');
 
-    listItem.innerHTML = `<img src=${movie.moviePoster} alt=${movie.title}>
-                        <a href="">${movie.title}</a>
-                        (${formatDate(movie.release_date)})`;
-    movieList.appendChild(listItem);
+    listItem.innerHTML = `<img src="${imgUrl}${movie.poster_path}" alt="${movie.title}" class="movie-poster">
+                        <a href="#"><h3>${movie.title}</h3></a>
+                        <p>(${formatDate(movie.release_date)})<p>`;
+    popularMovieList.appendChild(listItem);
   });
 
-  mainContent.appendChild(movieList);
+  popular.appendChild(popularMovieList);
 }
+
