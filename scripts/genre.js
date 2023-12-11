@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function searchedGenre() {
         // Get search query
-      let genreSearchQuery = document.getElementById("genre-search-input").value.toLowerCase();
+      let genreSearchQuery = document.getElementById("genre-search-input").value.toLowerCase().trim();
 
       // Get genre ID
       const genreSearch = await getMoviesByGenre(genreIds[genreSearchQuery]);

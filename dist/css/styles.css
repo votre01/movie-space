@@ -35,16 +35,13 @@ header nav a {
   background-color: #cf682c;
   height: 100%;
   text-decoration: none;
-  padding: 1rem;
+  padding: 2rem 1rem;
   color: #d6d6d6;
   font-size: 1.2rem;
   margin: 0;
   transition: background-color 1s ease;
 }
 header nav a:hover {
-  background-color: #0e3250;
-}
-header nav a:active {
   background-color: #0e3250;
 }
 
