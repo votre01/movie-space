@@ -11,10 +11,53 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
+    // padding: 2rem;
     background-color: rgba(0, 0, 0, 0.5);
     margin: 0;
     font-family: "Barlow";
+
+    a {
+        text-decoration: none;
+        color: $accent-color1;
+
+        h1 {
+            font-size: 1rem;
+            padding: 0 2rem;
+            transition: color 1s ease;
+            
+            &:hover { color: $secondary-color; }
+        }
+
+    }
+
+
+    
+
+    nav {
+        display: flex;
+        flex-wrap: nowrap;
+        background-color: $secondary-color;
+
+        a {
+            background-color: $secondary-color;
+            height: 100%;
+            text-decoration: none;
+            padding: 1rem;
+            color: $accent-color1;
+            font-size: 1.2rem;
+            margin: 0;
+            transition: background-color 1s ease;
+
+            &:hover {
+                background-color: $primary-color;
+            }
+
+            &:active {
+                background-color: $primary-color;
+            }
+
+        }
+    }
 
 }
 
@@ -23,10 +66,12 @@ header {
     flex-direction: column;
     align-items: center;
     font-family: "Poppins";
+    padding: .4rem;
 
     h2 {
-        font-weight: 100;
+        font-weight: 700;
         color: $secondary-color;
+        text-align: center;
     }
 
     .search {
@@ -66,7 +111,9 @@ header {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        // align-items: center;
+        align-items: center;
+        list-style-type: none;
+        padding-left: 0;
 
         li {
             display: flex;
@@ -76,7 +123,8 @@ header {
             box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
             margin: .4rem;
             // border: 1px solid $secondary-color;
-            border-radius: .6rem;
+            border-radius: .6rem;            
+
 
             a {
                 color: $accent-color1;
@@ -106,11 +154,15 @@ header {
 @media screen and (min-width: 600px) {
     
     .main {
+
+        h2 {
+            font-size: 2.5rem;
+        }
         .search {
             
             &__input, &__btn {
                 padding: 1rem .4rem;
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
         }
     }    
