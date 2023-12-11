@@ -3,6 +3,7 @@
 import { getMoviesByGenre, apiKey } from './api.js';
 import { renderGenreSearch } from './search.js';
 import genreIds from './genreIds.json' assert { type: 'json' };
+import { passMovie } from './utils.js';
 console.log(genreIds);
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -19,6 +20,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       // Render movies by genre
       renderGenreSearch(genreSearch);
+
+      // Pass movieId to details page
+      passMovie(".");
     }
 
     // Render me page with searched movie(s)

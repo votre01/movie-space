@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function getMovieIdFromUrl() {
   const urlParams = new URLSearchParams(window.location.search);
-  const movieId = urlParams.get('id');
+  const movieId = urlParams.get('movie_id');
 
   if (!movieId) {
     console.error('Movie ID not found in the URL');
@@ -55,5 +55,4 @@ function renderMovieDetails(movie) {
   const voteAverage = document.createElement('p');
   voteAverage.textContent = `Vote Average: ${movie.vote_average}`;
   movieDetailsContainer.appendChild(voteAverage);
-
 }

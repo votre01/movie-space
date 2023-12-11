@@ -1,4 +1,4 @@
-import { formatDate } from "./utils.js";
+import { formatDate, passMovie } from "./utils.js";
 import { imgUrl } from "./api.js";
 
 export function renderHomeSearch(homeSearch) {
@@ -12,7 +12,7 @@ export function renderHomeSearch(homeSearch) {
       const moviePoster = document.createElement('img');
   
       searchListItem.innerHTML = `<img src="${imgUrl}${movie.poster_path}" alt="${movie.title}" class="movie-poster">
-                                  <a href="#"><h3>${movie.title}</h3></a>
+                                  <a href="#" id="${movie.id}" class="movie-title"><h3>${movie.title}</h3></a>
                                   <p>(${formatDate(movie.release_date)})<p>`;
       movieSearchList.appendChild(searchListItem);
     });
@@ -31,11 +31,10 @@ export function renderGenreSearch(genreSearch) {
       const moviePoster = document.createElement('img');
   
       genreListItem.innerHTML = `<img src="${imgUrl}${movie.poster_path}" alt="${movie.title}" class="movie-poster">
-                                  <a href="#"><h3>${movie.title}</h3></a>
+                                  <a href="#" id="${movie.id}" class="movie-title"><h3>${movie.title}</h3></a>
                                   <p>(${formatDate(movie.release_date)})<p>`;
       genreSearchList.appendChild(genreListItem);
     });
   
     genreSearchResults.appendChild(genreSearchList);
 }
-
