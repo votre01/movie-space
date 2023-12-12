@@ -56,6 +56,7 @@ header nav a:hover {
   font-weight: 700;
   color: #cf682c;
   text-align: center;
+  line-height: 3rem;
 }
 .main .search {
   display: flex;
@@ -133,10 +134,24 @@ header nav a:hover {
   width: 100%;
   height: auto;
   border: 1px solid #cf682c;
-  border-radius: 1rem;
+  border-radius: 0.4rem;
 }
-.movie-details h2 {
-  text-align: left;
+.movie-details .release-date {
+  color: #cf682c;
+  font-size: 80%;
+}
+.movie-details .vote-average {
+  font-weight: 700;
+  color: #cf682c;
+}
+.movie-details .primary-btn {
+  background-color: #cf682c;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #d6d6d6;
+  padding: 0.6rem 1.4rem;
+  border: 2px solid #d6d6d6;
+  border-radius: 0.2rem;
 }
 
 @media screen and (min-width: 600px) {

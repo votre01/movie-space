@@ -20,14 +20,16 @@ document.addEventListener('DOMContentLoaded', async () => {
       renderHomeSearch(homeSearch);
 
       // Pass movieId to details page
-      passMovie("pages");
+      const movieTitles = document.querySelectorAll(".movie-title");
+      passMovie("pages/movie.html", movieTitles);
     }
 
     // Render home page with popular movies
     renderPopularMovies(popularMovies);
 
     // Pass movieId to details page
-    passMovie("pages");
+    const movieTitles = document.querySelectorAll(".movie-title");    
+    passMovie("pages/movie.html", movieTitles);
 
     // Render me page with searched movie(s)
     document.getElementById("home-search-btn").addEventListener("click", searched);

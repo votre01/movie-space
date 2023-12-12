@@ -1,7 +1,7 @@
 // movie.js
 
 import { getMovieDetails } from './api.js';
-import { formatDate, formatNumber } from './utils.js';
+import { formatDate, getMovieIdFromUrl, passMovieBtn } from './utils.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   try {
@@ -10,28 +10,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Render movie details
     renderMovieDetails(movieDetails);
+    const voteButton = document.getElementById("vote-btn");
+    passMovieBtn("review.html", voteButton);
 
-    // Add event listeners for navigation
-    document.getElementById('home-link').addEventListener('click', () => {
-      // Handle navigation to the home page
-    });
-    // Add more event listeners for other navigation links
   } catch (error) {
     console.error('Error loading movie details:', error);
   }
 });
-
-function getMovieIdFromUrl() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const movieId = urlParams.get('movie_id');
-
-  if (!movieId) {
-    console.error('Movie ID not found in the URL');
-
-  }
-
-  return movieId;
-}
 
 function renderMovieDetails(movie) {
   const movieDetailsContainer = document.getElementById('movie-details');
@@ -63,5 +48,7 @@ function renderMovieDetails(movie) {
   vote.textContent = `Vote`;
   movieDetailsContainer.appendChild(vote);
   vote.setAttribute("class", "primary-btn");
-
+  vote.setAttribute("id", "vote-btn");
 }
+
+

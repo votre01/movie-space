@@ -16,14 +16,34 @@ export function truncateString(str, maxLength) {
   return str;
 }
 
-export function passMovie(pageLocation) {
-  let movieTitles = document.querySelectorAll(".movie-title");
+export function passMovie(pageLocation, items) {
 
-  for (let movieTitle of movieTitles) {
-    movieTitle.addEventListener("click", function() {
-      const movieId = movieTitle.getAttribute("id");
-      const url = `${pageLocation}/movie.html?movie_id=${movieId}`;
+  for (let item of items) {
+    item.addEventListener("click", function() {
+      const movieId = item.getAttribute("id");
+      const url = `${pageLocation}?movie_id=${movieId}`;
       window.location.href = url;
     }); 
   }
+}
+
+export function passMovieBtn(pageLocation, item) {
+
+    item.addEventListener("click", function() {
+      const movieId = getMovieIdFromUrl();
+      const url = `${pageLocation}?movie_id=${movieId}`;
+      window.location.href = url;
+    }); 
+}
+
+export function getMovieIdFromUrl() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const movieId = urlParams.get('movie_id');
+
+  if (!movieId) {
+    console.error('Movie ID not found in the URL');
+
+  }
+
+  return movieId;
 }

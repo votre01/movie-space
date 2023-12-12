@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       renderGenreSearch(genreSearch);
 
       // Pass movieId to details page
-      passMovie(".");
+      const movieTitles = document.querySelectorAll(".movie-title");
+      passMovie("./movie.html", movieTitles);
     }
 
     // Render me page with searched movie(s)
