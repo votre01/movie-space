@@ -40,13 +40,14 @@ function renderMovieDetails(movie) {
   moviePoster.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
   movieDetailsContainer.appendChild(moviePoster);
 
-  const title = document.createElement('h2');
+  const title = document.createElement('h3');
   title.textContent = movie.title;
   movieDetailsContainer.appendChild(title);
 
   const releaseDate = document.createElement('p');
   releaseDate.textContent = `Release Date: ${formatDate(movie.release_date)}`;
   movieDetailsContainer.appendChild(releaseDate);
+  releaseDate.setAttribute("class", "release-date");
 
   const overview = document.createElement('p');
   overview.textContent = movie.overview;
@@ -55,4 +56,12 @@ function renderMovieDetails(movie) {
   const voteAverage = document.createElement('p');
   voteAverage.textContent = `Vote Average: ${movie.vote_average}`;
   movieDetailsContainer.appendChild(voteAverage);
+  voteAverage.setAttribute("class", "vote-average");
+
+
+  const vote = document.createElement('button');
+  vote.textContent = `Vote`;
+  movieDetailsContainer.appendChild(vote);
+  vote.setAttribute("class", "primary-btn");
+
 }

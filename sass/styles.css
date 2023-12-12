@@ -35,16 +35,13 @@ header nav a {
   background-color: #cf682c;
   height: 100%;
   text-decoration: none;
-  padding: 1rem;
+  padding: 2rem 1rem;
   color: #d6d6d6;
   font-size: 1.2rem;
   margin: 0;
   transition: background-color 1s ease;
 }
 header nav a:hover {
-  background-color: #0e3250;
-}
-header nav a:active {
   background-color: #0e3250;
 }
 
@@ -59,6 +56,7 @@ header nav a:active {
   font-weight: 700;
   color: #cf682c;
   text-align: center;
+  line-height: 3rem;
 }
 .main .search {
   display: flex;
@@ -126,6 +124,36 @@ header nav a:active {
   border-radius: 0.6rem 0.6rem 0 0;
 }
 
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  max-width: 360px;
+}
+.movie-details img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #cf682c;
+  border-radius: 0.4rem;
+}
+.movie-details .release-date {
+  color: #cf682c;
+  font-size: 80%;
+}
+.movie-details .vote-average {
+  font-weight: 700;
+  color: #cf682c;
+}
+.movie-details .primary-btn {
+  background-color: #cf682c;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #d6d6d6;
+  padding: 0.6rem 1.4rem;
+  border: 2px solid #d6d6d6;
+  border-radius: 0.2rem;
+}
+
 @media screen and (min-width: 600px) {
   .main h2 {
     font-size: 2.5rem;
@@ -133,5 +161,14 @@ header nav a:active {
   .main .search__input, .main .search__btn {
     padding: 1rem 0.4rem;
     font-size: 1.4rem;
+  }
+  .movie-details {
+    display: block;
+    max-width: 60%;
+  }
+  .movie-details img {
+    max-width: 20%;
+    float: left;
+    margin-right: 2rem;
   }
 }/*# sourceMappingURL=styles.css.map */
