@@ -65,6 +65,7 @@ header {
         font-weight: 700;
         color: $secondary-color;
         text-align: center;
+        line-height: 3rem;
     }
 
     .search {
@@ -154,11 +155,27 @@ header {
         width: 100%;
         height: auto; 
         border: 1px solid $secondary-color; 
-        border-radius: 1rem;      
+        border-radius: .4rem;      
     }
 
-    h2 {
-        text-align: left;
+    .release-date {
+        color: $secondary-color;
+        font-size: 80%;
+    }
+
+    .vote-average {
+        font-weight: 700;
+        color: $secondary-color
+    }
+
+    .primary-btn {
+        background-color: $secondary-color;
+        font-size: 1rem;
+        font-weight: 700;
+        color: $accent-color1;
+        padding: .6rem 1.4rem;
+        border: 2px solid $accent-color1;
+        border-radius: .2rem;
     }
 }
 
