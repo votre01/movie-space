@@ -15,14 +15,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         submitVoteBtn.addEventListener("click", function() {
             voting(movieId, votesLocal);
 
-            if (document.getElementById("movie-rating-input").value > 1) {
+            if (document.getElementById("movie-rating-input").value > 0) {
                 console.log(votesLocal); 
                 location.reload();
             } else {
-                const voteDetailsContainer = document.getElementById("vote-details-container");
+                const movieReview = document.getElementById("movie-review");
                 const emptyFieldsMessage = document.createElement("p");
 
-                emptyFieldsMessage.textContent = "You should enter a rating from 1-10"
+                emptyFieldsMessage.textContent = "You should enter a rating from 1-10";
+                movieReview.textContent = "";
+                movieReview.appendChild(emptyFieldsMessage);
             }
         });
         
@@ -37,6 +39,7 @@ function renderMovieReview(movie, votesLocal) {
 
     const movieReview = document.createElement('div');
     movieReview.setAttribute("class", "movie-review"); 
+    movieReview.setAttribute("id", "movie-review"); 
 
     const movieReviewInput = document.createElement('div');
     movieReviewInput.setAttribute("class", "movie-review-input");
@@ -54,11 +57,13 @@ function renderMovieReview(movie, votesLocal) {
     rating.setAttribute("id", "movie-rating-input");
     rating.setAttribute("class", "movie-rating-input");
     rating.setAttribute("type", "number");
+    rating.setAttribute("placeholder", "Enter a rating (1-10)");
     movieReviewInput.appendChild(rating);
 
     const comment = document.createElement('textarea');
     comment.setAttribute("id", "movie-comment-input");
     comment.setAttribute("class", "movie-comment-input");
+    comment.setAttribute("placeholder", "Comment");
     movieReviewInput.appendChild(comment);
 
     const submitVote = document.createElement('button');
@@ -68,7 +73,8 @@ function renderMovieReview(movie, votesLocal) {
     movieReviewInput.appendChild(submitVote);    
 
     const noVote = document.createElement('p');
-    const voteRating = document.createElement('p');
+    const userVoteHeader = document.createElement('h2');
+    const voteRating = document.createElement('h3');
     const voteComment = document.createElement('p');
 
     if (votesLocal != null) {
@@ -78,12 +84,14 @@ function renderMovieReview(movie, votesLocal) {
         let index = 0;
         
         votesLocal.allVotes.forEach(movieVote => {
-            console.log(`Yeah ${votesLocal.allVotes[index].id}`)
             if (parseInt(votesLocal.allVotes[index].id) == movie.id) { 
                               
                 
                 voteRating.textContent = votesLocal.allVotes[index].rating;
                 console.log(voteRating.textContent);
+                userVoteHeader.textContent = "Your Vote"
+                movieReview.appendChild(userVoteHeader);
+
                 movieReview.appendChild(voteRating);
                 
                 voteComment.textContent = votesLocal.allVotes[index].comment;
@@ -159,12 +167,5 @@ function voting(movieId, votesLocal) {
         }
 
         setLocalStorage("votes", votes);
-
-    } else {
-        const voteDetailsContainer = document.getElementById("vote-details-container");
-        const emptyFieldsMessage = document.createElement("p");
-
-        emptyFieldsMessage.textContent = "You should enter a rating from 1-10"
-        voteDetailsContainer.appendChild(emptyFieldsMessage);
     }
 }

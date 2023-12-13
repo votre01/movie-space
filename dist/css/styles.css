@@ -118,6 +118,16 @@ header nav a:hover {
   color: #cf682c;
 }
 
+.primary-btn {
+  background-color: #cf682c;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #d6d6d6;
+  padding: 0.6rem 1.4rem;
+  border: 2px solid #d6d6d6;
+  border-radius: 0.2rem;
+}
+
 .movie-poster {
   max-width: 100%;
   height: auto;
@@ -144,14 +154,63 @@ header nav a:hover {
   font-weight: 700;
   color: #cf682c;
 }
-.movie-details .primary-btn {
-  background-color: #cf682c;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #d6d6d6;
-  padding: 0.6rem 1.4rem;
-  border: 2px solid #d6d6d6;
+
+.vote-details-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin: 0;
+}
+.vote-details-container .movie-review-input {
+  display: flex;
+  flex-direction: column;
+}
+.vote-details-container .movie-review-input img {
+  max-width: 100%;
+  margin: 0;
+  height: auto;
   border-radius: 0.2rem;
+  border: 1px solid #cf682c;
+}
+.vote-details-container .movie-review-input input {
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  border-radius: 0.2rem;
+  border: 1px solid #cf682c;
+}
+.vote-details-container .movie-review-input textarea {
+  font-family: "Barlow";
+  resize: none;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  border-radius: 0.2rem;
+  border: 1px solid #cf682c;
+}
+.vote-details-container .movie-review {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  height: 100%;
+}
+.vote-details-container .movie-review h2 {
+  grid-column: 1/2;
+  text-align: left;
+}
+.vote-details-container .movie-review h3 {
+  grid-column: 2/3;
+  justify-self: center;
+  margin: 1rem;
+  background-color: #d6d6d6;
+  color: #0e3250;
+  padding: 1rem 1.8rem;
+  font-size: 2rem;
+  font-weight: 700;
+  border: 3px solid #cf682c;
+}
+.vote-details-container .movie-review p {
+  grid-column: 1/3;
 }
 
 @media screen and (min-width: 600px) {
@@ -169,6 +228,14 @@ header nav a:hover {
   .movie-details img {
     max-width: 20%;
     float: left;
+    margin-right: 2rem;
+  }
+  .vote-details-container {
+    flex-direction: row;
+    max-width: 60%;
+  }
+  .vote-details-container .movie-review-input {
+    max-width: 50%;
     margin-right: 2rem;
   }
 }/*# sourceMappingURL=styles.css.map */

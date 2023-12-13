@@ -1,4 +1,4 @@
-// index.js
+// genre.js
 
 import { getMoviesByGenre, apiKey } from './api.js';
 import { renderGenreSearch } from './search.js';
@@ -29,16 +29,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Render me page with searched movie(s)
     document.getElementById("genre-search-btn").addEventListener("click", searchedGenre);
 
-    // Add event listeners for navigation, etc.
-    document.getElementById('home-link').addEventListener('click', () => {
-      // Handle navigation to the home page
-    });
-    document.getElementById('genre-link').addEventListener('click', () => {
-      // Handle navigation to the genre page
-    });
-    document.getElementById('search-link').addEventListener('click', () => {
-      // Handle navigation to the search page
-    });
   } catch (error) {
     console.error('Error initializing the app:', error);
   }
